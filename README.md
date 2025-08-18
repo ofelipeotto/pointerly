@@ -34,6 +34,7 @@ Using a package manager:
 ```bash
 npm i pointerly
 ```
+
 ```js
 import Pointerly from 'pointerly';
 import 'pointerly/css';
@@ -43,12 +44,34 @@ import 'pointerly/css';
 <br/>
 
 Using scripts:
+<br/>
+CSS (in the <head>)
+<br/>
+Include the Pointerly styles inside the <head> tag:
 
 ```html
+
+<!-- unpkg -->
+<script src="https://unpkg.com/pointerly@1.0.0/pointerly.min.css"></script>
+
+<!-- jsdelivr -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.css">
-<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.js"></script>
+
 ```
 
+JS (before the closing <body>)
+<br/>
+Include the Pointerly JavaScript before the closing </body> tag:
+<br/>
+```html
+
+<!-- unpkg -->
+<script src="https://unpkg.com/pointerly@1.0.0/pointerly.min.js"></script>
+
+<!-- jsdelivr -->
+<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.js"></script>
+
+```
 
 <br>
 
