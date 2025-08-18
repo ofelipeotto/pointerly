@@ -1,31 +1,29 @@
-[![LENIS](https://assets.darkroom.engineering/hoverly/banner.gif)](https://github.com/ofelipeotto/hoverly)
-
-[![npm](https://img.shields.io/npm/v/hoverly?colorA=E30613&colorB=000000
-)](https://www.npmjs.com/package/hoverly)
-[![downloads](https://img.shields.io/npm/dm/hoverly?colorA=E30613&colorB=000000
-)](https://www.npmjs.com/package/hoverly)
-[![size](https://img.shields.io/bundlephobia/minzip/hoverly?label=size&colorA=E30613&colorB=000000)](https://bundlephobia.com/package/hoverly)
+[![npm](https://img.shields.io/npm/v/pointerly?colorA=E30613&colorB=000000
+)](https://www.npmjs.com/package/pointerly)
+[![downloads](https://img.shields.io/npm/dm/pointerly?colorA=E30613&colorB=000000
+)](https://www.npmjs.com/package/pointerly)
+[![size](https://img.shields.io/bundlephobia/minzip/pointerly?label=size&colorA=E30613&colorB=000000)](https://bundlephobia.com/package/pointerly)
 
 ## Introduction
 
-Hoverly is a lightweight and highly customizable library for creating interactive cursors in web interfaces. It allows you to replace the system’s default cursors with fully custom visual elements, adapting them to different contexts such as click states, text selection, or specific user interactions.
+Pointerly is a lightweight and highly customizable library for creating interactive cursors in web interfaces. It allows you to replace the system’s default cursors with fully custom visual elements, adapting them to different contexts such as click states, text selection, or specific user interactions.
 
-With a simple API, you can define custom cursors using HTML and SVG, as well as apply dynamic effects like text flags and chase animations. Hoverly provides flexibility to integrate unique cursors into any project, whether to highlight interactions or enhance the user’s visual experience.
+With a simple API, you can define custom cursors using HTML and SVG, as well as apply dynamic effects like text flags and chase animations. Pointerly provides flexibility to integrate unique cursors into any project, whether to highlight interactions or enhance the user’s visual experience.
 
 - [Packages](#packages)
 - [Installation](#installation)
 - [Setup](#setup)
 - [Events](#events)
-- [Hoverly in Use](#hoverly-in-use)
+- [Pointerly in Use](#pointerly-in-use)
 - [License](#license)
 
 ## Packages
 
-- [hoverly](https://github.com/ofelipeotto/hoverly/blob/main/README.md)
-- [hoverly/react](https://github.com/ofelipeotto/hoverly/blob/main/packages/react/README.md)
-- [hoverly/vue](https://github.com/ofelipeotto/hoverly/tree/main/packages/vue/README.md)
-- [hoverly/framer](https://hoverly.framer.website/)
-- [hoverly/snap](https://github.com/ofelipeotto/hoverly/tree/main/packages/snap/README.md)
+- [pointerly](https://github.com/ofelipeotto/pointerly/blob/main/README.md)
+- [pointerly/react](https://github.com/ofelipeotto/pointerly/blob/main/packages/react/README.md)
+- [pointerly/vue](https://github.com/ofelipeotto/pointerly/tree/main/packages/vue/README.md)
+- [pointerly/framer](https://pointerly.framer.website/)
+- [pointerly/snap](https://github.com/ofelipeotto/pointerly/tree/main/packages/snap/README.md)
 
 <br>
 
@@ -34,11 +32,11 @@ With a simple API, you can define custom cursors using HTML and SVG, as well as 
 Using a package manager:
 
 ```bash
-npm i hoverly
+npm i pointerly
 ```
 ```js
-import Hoverly from 'hoverly';
-import 'hoverly/css';
+import Pointerly from 'pointerly';
+import 'pointerly/css';
 
 ```
 
@@ -47,8 +45,8 @@ import 'hoverly/css';
 Using scripts:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hoverly@1.0.0/hoverly.min.css">
-<script src="https://cdn.jsdelivr.net/npm/hoverly@1.0.0/hoverly.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.css">
+<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.js"></script>
 ```
 
 
@@ -59,7 +57,7 @@ Using scripts:
 ### Basic:
 
 ```js
-var myCursor = Hoverly.init({
+var myCursor = Pointerly.init({
 
     cursors: {
 
@@ -83,7 +81,7 @@ var myCursor = Hoverly.init({
 ### Custom:
 
 ```js
-var myCursor = Hoverly.init({
+var myCursor = Pointerly.init({
 
     cursors: {
 
@@ -159,7 +157,7 @@ var myCursor = Hoverly.init({
 });
 ```
 
-## Hoverly in use
+## Pointerly in use
 
 - [Romulo in Motion](https://romuloinmotion.felipeotto.com) by [Felipe Otto](https://www.felipeotto.com/)
 

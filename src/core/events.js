@@ -1,6 +1,6 @@
-export function addEventTrigger(Hoverly) {
+export function addEventTrigger(Pointerly) {
 
-    Hoverly.prototype.on = function (stage, callback, priority = 1000) {
+    Pointerly.prototype.on = function (stage, callback, priority = 1000) {
 
         if (typeof callback === 'function' && this.triggers[stage]) {
 
@@ -12,7 +12,7 @@ export function addEventTrigger(Hoverly) {
         }
     };
 
-    Hoverly.prototype.runTriggers = async function (stage, data = null) {
+    Pointerly.prototype.runTriggers = async function (stage, data = null) {
 
         if (!this.triggers[stage]) {
 

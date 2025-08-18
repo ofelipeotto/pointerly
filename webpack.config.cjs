@@ -1,4 +1,4 @@
-const name = 'Hoverly';
+const name = 'Pointerly';
 const nameLowerCase = name.toLowerCase();
 
 const path = require('path');

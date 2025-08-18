@@ -1,20 +1,20 @@
 {
-    "name": "hoverly",
+    "name": "pointerly",
     "version": "1.0.0",
-    "description": "hoverly",
+    "description": "pointerly",
     "author": "Felipe Otto",
     "license": "MIT",
     "type": "module",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ofelipeotto/hoverly"
+        "url": "https://github.com/ofelipeotto/pointerly"
     },
     "bugs": {
-        "url": "https://github.com/ofelipeotto/hoverly/issues"
+        "url": "https://github.com/ofelipeotto/pointerly/issues"
     },
-    "homepage": "https://hoverly.felipeotto.com/",
+    "homepage": "https://pointerly.felipeotto.com/",
     "keywords": [
-        "hoverly",
+        "pointerly",
         "javascript",
         "cursor",
         "scripts",
@@ -22,21 +22,21 @@
         "app",
         "plugin"
     ],
-    "main": "hoverly.bundle.js",
-    "module": "hoverly.bundle.js",
-    "browser": "hoverly.min.js",
-    "style": "hoverly.bundle.css",
+    "main": "pointerly.bundle.js",
+    "module": "pointerly.bundle.js",
+    "browser": "pointerly.min.js",
+    "style": "pointerly.bundle.css",
     "files": [
-        "hoverly.bundle.js",
-        "hoverly.min.js",
-        "hoverly.bundle.css",
-        "hoverly.min.css",
+        "pointerly.bundle.js",
+        "pointerly.min.js",
+        "pointerly.bundle.css",
+        "pointerly.min.css",
         "css/index.js"
     ],
     "exports": {
         ".": {
-            "import": "./hoverly.bundle.js",
-            "require": "./hoverly.bundle.js"
+            "import": "./pointerly.bundle.js",
+            "require": "./pointerly.bundle.js"
         },
         "./css": {
             "import": "./css/index.js",
@@ -44,12 +44,12 @@
         }
     },
     "scripts": {
-        "dev": "webpack --config webpack.config.js --watch",
-        "build": "webpack --config webpack.config.js",
+        "dev": "webpack --config webpack.config.cjs --watch",
+        "build": "webpack --config webpack.config.cjs",
         "prepublishOnly": "npm run copy-to-root",
         "postpublish": "npm run clean-root",
         "copy-to-root": "cpx \"dist/**/*\" ./",
-        "clean-root": "rimraf hoverly.bundle* css"
+        "clean-root": "rimraf pointerly* css"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.21",

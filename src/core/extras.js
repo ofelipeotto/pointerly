@@ -1,6 +1,6 @@
-export function addExtras(Hoverly) {
+export function addExtras(Pointerly) {
 
-    Hoverly.prototype.prepareCursorMode = function (mode, data) {
+    Pointerly.prototype.prepareCursorMode = function (mode, data) {
 
         Object.entries(data).forEach(([variant, value]) => {
 
@@ -63,7 +63,7 @@ export function addExtras(Hoverly) {
         });
     };
 
-    Hoverly.prototype.init = function (data = {}) {
+    Pointerly.prototype.init = function (data = {}) {
 
         if (data.debug) this.debug = data.debug;
 
@@ -120,12 +120,12 @@ export function addExtras(Hoverly) {
         }
 
         // Add class in Wrapper Main
-        this.wrapper.classList.add('hoverly-wrapper');
+        this.wrapper.classList.add('pointerly-wrapper');
 
         // Create cursor
         this.cursorEl = this.createElement('div', {
 
-            class: 'hoverly',
+            class: 'pointerly',
 
             insertPrepend: this.wrapper
         });
@@ -133,7 +133,7 @@ export function addExtras(Hoverly) {
         // Wrapper Types
         this.wrapperCursorTypesEl = this.createElement('div', {
 
-            class: ['hoverly-wrapper-cursor-types'],
+            class: ['pointerly-wrapper-cursor-types'],
 
             insert: this.cursorEl
         });
@@ -143,7 +143,7 @@ export function addExtras(Hoverly) {
 
             const cursorTypeEl = this.createElement('div', {
 
-                class: ['hoverly-type'],
+                class: ['pointerly-type'],
                 attrs: {
                     'data-type': type,
                 },
@@ -162,21 +162,21 @@ export function addExtras(Hoverly) {
             // Wrapper Types
             this.wrapperCursorFlagsEl = this.createElement('div', {
 
-                class: 'hoverly-wrapper-cursor-flags',
+                class: 'pointerly-wrapper-cursor-flags',
 
                 insert: this.cursorEl
             });
 
             this.cursorFlags.forEach(flag => {
 
-                const cursorFlagsClass = ['hoverly-flag'];
+                const cursorFlagsClass = ['pointerly-flag'];
 
                 if (this.cursorFlagConfig[flag].effect) {
-                    cursorFlagsClass.push(`hoverly-flag-effect-${this.cursorFlagConfig[flag].effect}`);
+                    cursorFlagsClass.push(`pointerly-flag-effect-${this.cursorFlagConfig[flag].effect}`);
                 }
 
                 if (this.cursorFlagConfig[flag].pos !== 'default') {
-                    cursorFlagsClass.push(`hoverly-flag-pos-${this.cursorFlagConfig[flag].pos}`);
+                    cursorFlagsClass.push(`pointerly-flag-pos-${this.cursorFlagConfig[flag].pos}`);
                 }
 
                 const cursorFlagEl = this.createElement('div', {
@@ -196,10 +196,10 @@ export function addExtras(Hoverly) {
         }
 
         // System Cursors
-        this.wrapper.setAttribute('data-hoverly-system-cursors', this.systemCursors);
+        this.wrapper.setAttribute('data-pointerly-system-cursors', this.systemCursors);
 
         // Loaded 
-        this.wrapper.setAttribute('data-hoverly-loaded', 'true');
+        this.wrapper.setAttribute('data-pointerly-loaded', 'true');
         this.loaded = true;
 
 
@@ -224,7 +224,7 @@ export function addExtras(Hoverly) {
         return true;
     };
 
-    Hoverly.prototype.checkSizeViewPort = function () {
+    Pointerly.prototype.checkSizeViewPort = function () {
 
         this._viewport = {
             width: window.innerWidth,
@@ -233,7 +233,7 @@ export function addExtras(Hoverly) {
     };
 
 
-    Hoverly.prototype.refresh = function () {
+    Pointerly.prototype.refresh = function () {
 
         this.console.info('Refresh cursor...');
 
@@ -247,7 +247,7 @@ export function addExtras(Hoverly) {
         this.checkSizeViewPort();
     };
 
-    Hoverly.prototype.___prepareElement___ = function (element) {
+    Pointerly.prototype.___prepareElement___ = function (element) {
 
         if (!element) return;
 
@@ -276,7 +276,7 @@ export function addExtras(Hoverly) {
         return this.domElements.get(element);
     };
 
-    Hoverly.prototype.___prepareAllElements___ = function () {
+    Pointerly.prototype.___prepareAllElements___ = function () {
 
         this.asArray('[data-cursor]').forEach(element => {
 
@@ -293,7 +293,7 @@ export function addExtras(Hoverly) {
         });
     };
 
-    Hoverly.prototype.startEvents = function () {
+    Pointerly.prototype.startEvents = function () {
 
         // Move
         //this.wrapper.addEventListener('mousemove', (e) => {
@@ -364,7 +364,7 @@ export function addExtras(Hoverly) {
         });
     };
 
-    Hoverly.prototype.enter = function (e) {
+    Pointerly.prototype.enter = function (e) {
 
         if (!this.inWrapper) {
 
@@ -377,7 +377,7 @@ export function addExtras(Hoverly) {
         }
     };
 
-    Hoverly.prototype.move = function (e) {
+    Pointerly.prototype.move = function (e) {
 
         const eventData = this.getEventData(e);
 
@@ -400,7 +400,7 @@ export function addExtras(Hoverly) {
 
         this.updateCursor();
     };
-    Hoverly.prototype.moveCursor = function () {
+    Pointerly.prototype.moveCursor = function () {
 
         const { x, y } = this.cursor.pos;
 
@@ -488,7 +488,7 @@ export function addExtras(Hoverly) {
 
         updatePos();
     };
-    Hoverly.prototype.updateCursor = function () {
+    Pointerly.prototype.updateCursor = function () {
 
         // Check Fullscreen
         this.checkFullscreen();
@@ -519,7 +519,7 @@ export function addExtras(Hoverly) {
 
         this.runTriggers('updateCursor', this.cursor);
     };
-    Hoverly.prototype.updateCursorType = function (cursorType, validCursor) {
+    Pointerly.prototype.updateCursorType = function (cursorType, validCursor) {
 
         this.lastCursorType = cursorType;
 
@@ -539,9 +539,9 @@ export function addExtras(Hoverly) {
 
             //console.log('valido! fullscreenActive:', this.fullscreenActive);
 
-            this.wrapper.setAttribute('data-hoverly-custom', cursorType);
-            this.wrapper.setAttribute('data-hoverly-system', '');
-            this.wrapper.setAttribute('data-hoverly-valid', 'true');
+            this.wrapper.setAttribute('data-pointerly-custom', cursorType);
+            this.wrapper.setAttribute('data-pointerly-system', '');
+            this.wrapper.setAttribute('data-pointerly-valid', 'true');
 
             this.cursorTypeEl[cursorType].classList.add('current');
             this.cursorEl.setAttribute('data-cursor-current', cursorType);
@@ -549,14 +549,14 @@ export function addExtras(Hoverly) {
 
         } else {
 
-            this.wrapper.setAttribute('data-hoverly-custom', '');
-            this.wrapper.setAttribute('data-hoverly-system', cursorType);
-            this.wrapper.setAttribute('data-hoverly-valid', 'false');
+            this.wrapper.setAttribute('data-pointerly-custom', '');
+            this.wrapper.setAttribute('data-pointerly-system', cursorType);
+            this.wrapper.setAttribute('data-pointerly-valid', 'false');
 
             this.cursorEl.setAttribute('data-cursor-current', '');
         }
     };
-    Hoverly.prototype.updateCursorFlag = function (cursorFlag) {
+    Pointerly.prototype.updateCursorFlag = function (cursorFlag) {
 
         this.lastCursorFlag = cursorFlag;
 
@@ -631,7 +631,7 @@ export function addExtras(Hoverly) {
             }
         }
     };
-    Hoverly.prototype.leave = function () {
+    Pointerly.prototype.leave = function () {
 
         this.console.info(`Leave`);
 
@@ -641,7 +641,7 @@ export function addExtras(Hoverly) {
         this.runTriggers('leave');
     };
 
-    Hoverly.prototype.getEventData = function (event) {
+    Pointerly.prototype.getEventData = function (event) {
 
         // Coordinates
         const x = event.clientX;
@@ -665,7 +665,7 @@ export function addExtras(Hoverly) {
     //------------------------------------------------------
     // Set class event
 
-    Hoverly.prototype.setLastEvent = function (event) {
+    Pointerly.prototype.setLastEvent = function (event) {
 
         let className;
 
@@ -676,7 +676,7 @@ export function addExtras(Hoverly) {
         else if (event == 'mouseup') className = 'mouseup';
 
         if (this.lastEvent != event) {
-            this.wrapper.setAttribute('data-hoverly-last-event', event);
+            this.wrapper.setAttribute('data-pointerly-last-event', event);
             this.lastEvent = event;
         }
 
@@ -694,7 +694,7 @@ export function addExtras(Hoverly) {
         }, 100);
     };
 
-    Hoverly.prototype.validateCustomRendering = function (value, key) {
+    Pointerly.prototype.validateCustomRendering = function (value, key) {
 
         if (
             typeof value === 'function' ||
@@ -708,7 +708,7 @@ export function addExtras(Hoverly) {
         return false;
     };
 
-    Hoverly.prototype.customRendering = function (key, insertIn, data = {}) {
+    Pointerly.prototype.customRendering = function (key, insertIn, data = {}) {
 
         if (!key || !insertIn) return null;
 
@@ -740,7 +740,7 @@ export function addExtras(Hoverly) {
         return inserted?.[0] || null;
     };
 
-    Hoverly.prototype.resolveRenderOutput = function (renderItem, context = {}, data = {}) {
+    Pointerly.prototype.resolveRenderOutput = function (renderItem, context = {}, data = {}) {
 
         // Se for função, executa passando o contexto e os dados
         if (typeof renderItem === 'function') {
@@ -786,7 +786,7 @@ export function addExtras(Hoverly) {
         return null;
     };
 
-    Hoverly.prototype.guessCursorFlag = function (el) {
+    Pointerly.prototype.guessCursorFlag = function (el) {
 
         if (!el) return;
 
@@ -796,7 +796,7 @@ export function addExtras(Hoverly) {
 
     };
 
-    Hoverly.prototype.guessCursorType = function (el) {
+    Pointerly.prototype.guessCursorType = function (el) {
 
         if (!el) return;
 
@@ -837,7 +837,7 @@ export function addExtras(Hoverly) {
         return 'default';
     };
 
-    Hoverly.prototype.hasWebGLSupport = function () {
+    Pointerly.prototype.hasWebGLSupport = function () {
 
         try {
             const canvas = document.createElement('canvas');
@@ -849,7 +849,7 @@ export function addExtras(Hoverly) {
         }
     };
 
-    Hoverly.prototype.checkFullscreen = function () {
+    Pointerly.prototype.checkFullscreen = function () {
 
         this.fullscreenActive = this.isFullscreenActive();
 
@@ -867,7 +867,7 @@ export function addExtras(Hoverly) {
 
     };
 
-    Hoverly.prototype.checkIsMobileDevice = function () {
+    Pointerly.prototype.checkIsMobileDevice = function () {
 
         this.isMobileDevice = this.___isMobileDevice___();
 
@@ -880,7 +880,7 @@ export function addExtras(Hoverly) {
         }
     };
 
-    Hoverly.prototype.isFullscreenActive = function () {
+    Pointerly.prototype.isFullscreenActive = function () {
         return !!(
             document.fullscreenElement ||
             document.webkitFullscreenElement ||  // Safari
@@ -890,16 +890,16 @@ export function addExtras(Hoverly) {
         );
     };
 
-    Hoverly.prototype.delay = function (ms) {
+    Pointerly.prototype.delay = function (ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     };
 
-    Hoverly.prototype.isSafariBrowser = function () {
+    Pointerly.prototype.isSafariBrowser = function () {
         return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     };
 
     // Função auxiliar para criar elementos
-    Hoverly.prototype.createElement = function (tag, options = {}) {
+    Pointerly.prototype.createElement = function (tag, options = {}) {
 
         const element = document.createElement(tag);
 
@@ -931,11 +931,11 @@ export function addExtras(Hoverly) {
         return element;
     };
 
-    Hoverly.prototype.___isMobileDevice___ = function () {
+    Pointerly.prototype.___isMobileDevice___ = function () {
         return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Kindle|Silk|Mobile/i.test(navigator.userAgent);
     };
 
-    Hoverly.prototype.asArray = function (value, scope = document, leaveStrings = false) {
+    Pointerly.prototype.asArray = function (value, scope = document, leaveStrings = false) {
 
         if (value instanceof HTMLElement) return [value];
 
@@ -993,7 +993,7 @@ export function addExtras(Hoverly) {
         return value ? [value] : [];
     };
 
-    Hoverly.prototype.destroy = function () {
+    Pointerly.prototype.destroy = function () {
 
         this.debug = false;
         this.container = null;
@@ -1010,7 +1010,7 @@ export function addExtras(Hoverly) {
         this.inputCaptcha = null;
         this.valid = false;
     };
-    Hoverly.prototype.createConsole = function () {
+    Pointerly.prototype.createConsole = function () {
 
         if (!this.debug) {
 
@@ -1037,12 +1037,12 @@ export function addExtras(Hoverly) {
             },
         };
     };
-    Hoverly.prototype.complete = function () {
+    Pointerly.prototype.complete = function () {
         this.console.info(`Complete`);
 
         this.runTriggers('complete');
     };
-    Hoverly.prototype.mouseUp = function (e) {
+    Pointerly.prototype.mouseUp = function (e) {
 
         const eventData = this.getEventData(e);
 
@@ -1053,7 +1053,7 @@ export function addExtras(Hoverly) {
 
         this.runTriggers('mouseup', eventData);
     };
-    Hoverly.prototype.mouseDown = function (e) {
+    Pointerly.prototype.mouseDown = function (e) {
 
         const eventData = this.getEventData(e);
 
@@ -1064,7 +1064,7 @@ export function addExtras(Hoverly) {
 
         this.runTriggers('mousedown', eventData);
     };
-    Hoverly.prototype.doubleClick = function (e) {
+    Pointerly.prototype.doubleClick = function (e) {
 
         const eventData = this.getEventData(e);
 
@@ -1075,7 +1075,7 @@ export function addExtras(Hoverly) {
 
         this.runTriggers('dblclick', eventData);
     };
-    Hoverly.prototype.click = function (e) {
+    Pointerly.prototype.click = function (e) {
 
         const eventData = this.getEventData(e);
 

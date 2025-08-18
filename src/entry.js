@@ -1,17 +1,17 @@
 import "./styles/global.css";
 
-import Hoverly from "./core/core.js";
+import Pointerly from "./core/core.js";
 import { addEventTrigger } from "./core/events.js";
 import { addExtras } from "./core/extras.js";
 
 // Extensions
-addExtras(Hoverly);
-addEventTrigger(Hoverly);
+addExtras(Pointerly);
+addEventTrigger(Pointerly);
 
 
-const _instance = new Hoverly();
+const _instance = new Pointerly();
 
-const HoverlyGlobal = {
+const PointerlyGlobal = {
     //version: '1.0.0',
     init: (...args) => _instance.init(...args),
     refresh: (...args) => _instance.refresh(...args),
@@ -19,10 +19,10 @@ const HoverlyGlobal = {
 };
 
 // Para uso interno de métodos estáticos que precisam acessar a instância
-Hoverly._instance = _instance;
+Pointerly._instance = _instance;
 
 if (typeof window !== 'undefined') {
-    window.Hoverly = HoverlyGlobal;
+    window.Pointerly = PointerlyGlobal;
 }
 
-export default HoverlyGlobal;
+export default PointerlyGlobal;

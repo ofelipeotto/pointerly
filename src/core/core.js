@@ -1,4 +1,4 @@
-export default class Hoverly {
+export default class Pointerly {
 
     constructor() {
 
@@ -7,7 +7,7 @@ export default class Hoverly {
 
         this.valid = false;
 
-        this.consolePrefix = `[Hoverly]`;
+        this.consolePrefix = `[Pointerly]`;
 
         this.debug = false;
 
