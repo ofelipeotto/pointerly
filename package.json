@@ -1,0 +1,69 @@
+{
+    "name": "hoverly",
+    "version": "1.0.0",
+    "description": "hoverly",
+    "author": "Felipe Otto",
+    "license": "MIT",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ofelipeotto/hoverly"
+    },
+    "bugs": {
+        "url": "https://github.com/ofelipeotto/hoverly/issues"
+    },
+    "homepage": "https://hoverly.felipeotto.com/",
+    "keywords": [
+        "hoverly",
+        "javascript",
+        "cursor",
+        "scripts",
+        "animation",
+        "app",
+        "plugin"
+    ],
+    "main": "hoverly.bundle.js",
+    "module": "hoverly.bundle.js",
+    "browser": "hoverly.min.js",
+    "style": "hoverly.bundle.css",
+    "files": [
+        "hoverly.bundle.js",
+        "hoverly.min.js",
+        "hoverly.bundle.css",
+        "hoverly.min.css",
+        "css/index.js"
+    ],
+    "exports": {
+        ".": {
+            "import": "./hoverly.bundle.js",
+            "require": "./hoverly.bundle.js"
+        },
+        "./css": {
+            "import": "./css/index.js",
+            "require": "./css/index.js"
+        }
+    },
+    "scripts": {
+        "dev": "webpack --config webpack.config.js --watch",
+        "build": "webpack --config webpack.config.js",
+        "prepublishOnly": "npm run copy-to-root",
+        "postpublish": "npm run clean-root",
+        "copy-to-root": "cpx \"dist/**/*\" ./",
+        "clean-root": "rimraf hoverly.bundle* css"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.21",
+        "compression-webpack-plugin": "^11.1.0",
+        "cpx": "^1.5.0",
+        "css-loader": "^7.1.2",
+        "cssnano": "^7.1.0",
+        "mini-css-extract-plugin": "^2.9.4",
+        "postcss": "^8.5.6",
+        "postcss-loader": "^8.1.1",
+        "postcss-preset-env": "^10.2.4",
+        "rimraf": "^6.0.1",
+        "terser-webpack-plugin": "^5.3.14",
+        "webpack": "^5.101.2",
+        "webpack-cli": "^6.0.1"
+    }
+}

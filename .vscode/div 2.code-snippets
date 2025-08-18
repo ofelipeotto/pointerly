@@ -1,0 +1,38 @@
+{
+    "Insert divider line (PHP)": {
+        "prefix": "div",
+        "body": [
+            "//------------------------------------------------------",
+            "# "
+        ],
+        "description": "Inserts a divider line as a comment",
+        "scope": "php"
+    },
+    "Insert divider line (JS)": {
+        "prefix": "div",
+        "body": [
+            "//------------------------------------------------------",
+            "// "
+        ],
+        "description": "Inserts a divider line as a comment",
+        "scope": "javascript,typescript"
+    },
+    "Insert divider line (CSS)": {
+        "prefix": "div",
+        "body": [
+            "/*------------------------------------------------------*/",
+            "/* */"
+        ],
+        "description": "Inserts a divider line as a comment for CSS",
+        "scope": "css,scss,less"
+    },
+    "Insert divider line (HTML)": {
+        "prefix": "div",
+        "body": [
+            "<!------------------------------------------------------>",
+            "<!-- -->"
+        ],
+        "description": "Inserts a divider line as a comment for HTML",
+        "scope": "html"
+    }
+}
