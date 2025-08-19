@@ -192,4 +192,4 @@ var myCursor = Pointerly.init({
 
 ## License
 
-MIT © [ofelipeotto](https://github.com/ofelipeotto)
+MIT © [Felipe Otto](https://github.com/ofelipeotto)
