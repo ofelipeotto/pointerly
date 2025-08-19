@@ -64,6 +64,7 @@ function createConfig(mode) {
                         extractComments: false,
                         terserOptions: {
                             compress: true,
+                            keep_classnames: true,
                             //format: { comments: false }
                         }
                     })

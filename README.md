@@ -4,11 +4,6 @@
 )](https://www.npmjs.com/package/pointerly)
 [![jsdelivr](https://img.shields.io/jsdelivr/npm/hm/pointerly?label=jsDelivr&colorA=E30613&colorB=000000
 )](https://www.jsdelivr.com/package/npm/pointerly)
-[![size](https://packagephobia.com/badge?p=pointerly
-)](https://packagephobia.com/result?p=pointerly)
-
-
-
 [![size](https://img.shields.io/bundlephobia/minzip/pointerly?label=size&colorA=E30613&colorB=000000
 )](https://bundlephobia.com/package/min/pointerly)
 

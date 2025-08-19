@@ -15,7 +15,7 @@ export default class Pointerly {
 
         this.console = this.createConsole();
 
-        this.webGLSupported = this.hasWebGLSupport();
+        this.webGLSupported = this.utils_hasWebGLSupport();
 
         if (!this.webGLSupported) {
             this.console.error('WebGL not supported.');
@@ -140,7 +140,7 @@ export default class Pointerly {
         // Complete
 
         //this.valid = this.complete();
-    
+
         return;
     }
 }
