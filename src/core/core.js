@@ -5,6 +5,8 @@ export default class Pointerly {
         //------------------------------------------------------
         // Infos
 
+        this.version = __VERSION__;
+
         this.valid = false;
 
         this.consolePrefix = `[Pointerly]`;

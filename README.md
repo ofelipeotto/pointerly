@@ -1,8 +1,15 @@
 [![npm](https://img.shields.io/npm/v/pointerly?colorA=E30613&colorB=000000
 )](https://www.npmjs.com/package/pointerly)
-[![downloads](https://img.shields.io/npm/dm/pointerly?colorA=E30613&colorB=000000
+
+[![npm-downloads](https://img.shields.io/npm/dm/pointerly?colorA=E30613&colorB=000000
 )](https://www.npmjs.com/package/pointerly)
-[![size](https://img.shields.io/bundlephobia/minzip/pointerly?label=size&colorA=E30613&colorB=000000)](https://bundlephobia.com/package/pointerly)
+
+[![jsdelivr](https://img.shields.io/jsdelivr/npm/hm/pointerly?label=jsDelivr%20downloads&colorA=E30613&colorB=000000
+)](https://www.jsdelivr.com/package/npm/swiper)
+
+[![size](https://img.shields.io/bundlephobia/minzip/pointerly?label=size&colorA=E30613&colorB=000000
+)](https://bundlephobia.com/package/pointerly)
+
 
 ## Introduction
 

@@ -1,10 +1,14 @@
 {
     "name": "pointerly",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "pointerly",
     "author": "Felipe Otto",
     "license": "MIT",
     "type": "module",
+    "meta": {
+        "year": "2025",
+        "contact": "hello@felipeotto.com"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/ofelipeotto/pointerly"

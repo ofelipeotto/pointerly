@@ -8,11 +8,9 @@ import { addExtras } from "./core/extras.js";
 addExtras(Pointerly);
 addEventTrigger(Pointerly);
 
-
 const _instance = new Pointerly();
 
 const PointerlyGlobal = {
-    //version: '1.0.0',
     init: (...args) => _instance.init(...args),
     refresh: (...args) => _instance.refresh(...args),
     _instance
