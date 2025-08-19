@@ -56,10 +56,10 @@ Include the Pointerly styles inside the <head> tag:
 ```html
 
 <!-- unpkg -->
-<script src="https://unpkg.com/pointerly@1.0.0/pointerly.min.css"></script>
+<script src="https://unpkg.com/pointerly@1.0.2/pointerly.min.css"></script>
 
 <!-- jsdelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pointerly@1.0.2/pointerly.min.css">
 
 ```
 
@@ -70,10 +70,10 @@ Include the Pointerly JavaScript before the closing </body> tag:
 ```html
 
 <!-- unpkg -->
-<script src="https://unpkg.com/pointerly@1.0.0/pointerly.min.js"></script>
+<script src="https://unpkg.com/pointerly@1.0.2/pointerly.min.js"></script>
 
 <!-- jsdelivr -->
-<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.0/pointerly.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.2/pointerly.min.js"></script>
 
 ```
 
