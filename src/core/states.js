@@ -158,7 +158,7 @@ export function addStates(Pointerly) {
         // Trigger Init
         this.runTriggers('init');
 
-        return true;
+        return this;
     };
 
     Pointerly.prototype.prepareCursorMode = function (mode, data) {

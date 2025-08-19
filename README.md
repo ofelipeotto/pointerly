@@ -56,10 +56,10 @@ Include the Pointerly styles inside the <head> tag:
 ```html
 
 <!-- unpkg -->
-<script src="https://unpkg.com/pointerly@1.0.2/pointerly.min.css"></script>
+<script src="https://unpkg.com/pointerly@1.0.3/pointerly.min.css"></script>
 
 <!-- jsdelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pointerly@1.0.2/pointerly.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pointerly@1.0.3/pointerly.min.css">
 
 ```
 
@@ -70,10 +70,10 @@ Include the Pointerly JavaScript before the closing </body> tag:
 ```html
 
 <!-- unpkg -->
-<script src="https://unpkg.com/pointerly@1.0.2/pointerly.min.js"></script>
+<script src="https://unpkg.com/pointerly@1.0.3/pointerly.min.js"></script>
 
 <!-- jsdelivr -->
-<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.2/pointerly.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pointerly@1.0.3/pointerly.min.js"></script>
 
 ```
 
@@ -152,8 +152,6 @@ var myCursor = Pointerly.init({
 
                         <span class="text"></span>
 
-                        <span class="text duplicate"></span>
-
                     </div>
                         
                 </div>`,
@@ -163,24 +161,17 @@ var myCursor = Pointerly.init({
 
     on: {
 
-        updateCursor: (cursor) => {
+        updateCursor: (data) => {
 
-            const text = cursor.elementUnder?.getAttribute('data-cursor-flag-text');
+            const text = data.elementUnder?.getAttribute('data-cursor-flag-text') || '';
 
-            const cursorFlagTexts = document.querySelectorAll('.custom-cursor-flag .text');
+            const cursorFlagText = data.container?.querySelector('.custom-cursor-flag .text');
 
-            if (text && cursorFlagTexts) {
-
-                cursorFlagTexts.forEach(textFlag => {
-
-                    textFlag.textContent = text;
-
-                });
-            }
+            if (cursorFlagTexts) cursorFlagTexts.textContent = text;
         },
     },
 
-    debug: true,
+    debug: false,
 });
 ```
 

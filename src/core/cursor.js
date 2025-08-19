@@ -118,6 +118,8 @@ export function addCursor(Pointerly) {
             this.updateCursorType(currentElementUnder.type, currentElementUnder.valid);
         }
 
+        this.cursor.container = this.cursorEl;
+
         this.runTriggers('updateCursor', this.cursor);
     };
     Pointerly.prototype.updateCursorType = function (cursorType, validCursor) {
