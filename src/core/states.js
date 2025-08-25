@@ -144,11 +144,9 @@ export function addStates(Pointerly) {
         this.___prepareAllElements___();
 
         // Check size viewport
-        window.addEventListener('resize', () => {
-            this.utils_sizeViewPort();
-        });
+        window.addEventListener('resize', this.handleUtils_sizeViewPort);
 
-        this.utils_sizeViewPort();
+        this.utils_sizeViewPort(); 
 
         //------------------------------------------------------
         // Events
@@ -300,6 +298,8 @@ export function addStates(Pointerly) {
         this.errors = null;
         this.inputCaptcha = null;
         this.valid = false;
+
+        window.removeEventListener('resize', this.handleUtils_sizeViewPort);
     };
 
     Pointerly.prototype.complete = function () {

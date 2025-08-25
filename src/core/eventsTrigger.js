@@ -12,6 +12,19 @@ export function addEventTrigger(Pointerly) {
         }
     };
 
+    Pointerly.prototype.off = function (stage, callback) {
+
+        if (typeof callback === 'function' && this.triggers[stage]) {
+
+            this.triggers[stage] = this.triggers[stage].filter(
+                trigger => trigger.callback !== callback
+            );
+
+        } else {
+            console.error('Callback deve ser uma função e o estágio deve ser válido (initial, leave, enter).');
+        }
+    };
+
     Pointerly.prototype.runTriggers = async function (stage, data = null) {
 
         if (!this.triggers[stage]) {

@@ -17,6 +17,8 @@ export default class Pointerly {
 
         this.webGLSupported = this.utils_hasWebGLSupport();
 
+        this.handleUtils_sizeViewPort = this.utils_sizeViewPort().bind(this);
+
         if (!this.webGLSupported) {
             this.console.error('WebGL not supported.');
         }
